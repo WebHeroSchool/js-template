@@ -1,5 +1,4 @@
 let url = location.href;
-
 let userName = (url) => {
     let regexp = new RegExp('(.*\=)');
     let str = regexp.test(url.toString());
@@ -37,7 +36,6 @@ fetch(`https://api.github.com/users/${userName(url)}`)
             creatImg(data.avatar_url, "img");
             createDesc(data.bio, "desc");
         }
-
     })
     .catch(error=>{
         document.body.innerHTML =`<p>${error.message}</p>`
