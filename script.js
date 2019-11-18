@@ -1,4 +1,5 @@
 let url = location.href;
+let  time = new Date();
 
 let userName = (url) => {
     let regexp = new RegExp('(.*\=)');
@@ -26,19 +27,35 @@ const createDesc = (data, name) => {
     p.innerHTML = data;
     document.body.appendChild(p);
 };
-fetch(`https://api.github.com/users/${userName(url)}`)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-        if(data.message ==="Not Found"){
-            throw new Error("Информация о пользователе не доступна")
-        }else{
+const loaderTime = new Promise((resolve, reject) => {
+        setTimeout(()=>  resolve(time),3000)
+    }
+);
+const sendFetch = new Promise((resolve, reject)=>{
+     fetch(`https://api.github.com/users/${userName(url)}`)
+         .then(res => res.json())
+         .then(data => {
+             if(data.message ==="Not Found"){
+                 throw new Error("Информация о пользователе не доступна")
+             }else{
+                 resolve(data)
+             }
+         })
+         .catch((error)=>{
+             reject(error);
+         })
+});
+Promise.all([loaderTime, sendFetch])
+    .then(([time, data]) => {
             creatName(data.name, data.html_url, "name-link");
             creatImg(data.avatar_url, "img");
             createDesc(data.bio, "desc");
-        }
-
+            createDesc(time, "time");
+    })
+    .then(()=>{
+        let loader = document.querySelector(".loader");
+        loader.remove();
     })
     .catch(error=>{
-        document.body.innerHTML =`<p>${error.message}</p>`
+        document.body.innerHTML =`<p>${error.message}</p>`;
     });
