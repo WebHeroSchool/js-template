@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --watch ",
     "lint": "eslint ./src",
-    "lint:fix": "eslint  ./src --fix --color",
+    "lint:fix": "eslint  ./src --fix --color"
   },
   "repository": {
     "type": "git",
