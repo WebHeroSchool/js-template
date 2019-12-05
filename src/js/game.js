@@ -44,7 +44,7 @@ export default class Game {
 					this.gameover = true;
 				} else {
 					this.renderComponent();
-					this.gameover = false;
+					document.location.reload();
 				}
 			});
 		});
