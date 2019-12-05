@@ -1,0 +1,103 @@
+html{
+  font-family: 'Open Sans', sans-serif;
+}
+h1{
+  font-size: 57px;
+}
+p{
+  font-size: 19px;
+}
+.header{
+  margin-bottom: 60px;
+}
+.level-wrap{
+  display: flex;
+  flex-direction: column;
+ label{
+    font-size: 50px;
+    margin-bottom: 24px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    margin-left: 50px;
+  }
+  input{
+    display: none;
+    &:checked+label{
+      &:after{
+        display: inline-block;
+        position: absolute;
+        left: -50px;
+        content: "";
+        margin-top: -15px;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: #D62B2E;
+      }
+    }
+  }
+}
+main{
+  background: url("/images/background.png");
+  max-width: 1100px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: white;
+  padding: 150px 200px;
+}
+button{
+  font-size: 32px;
+  padding: 29px 82px;
+  background-color: red;
+  color:white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  &:disabled{
+    background: gray;
+  }
+}
+.wrap-card{
+  width: 218px;
+  height: 340px;
+  transition: transform 1.6s;
+  transform-style: preserve-3d;
+  text-align: center;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.wrap-card.active{
+  transform: rotateY(180deg);
+}
+.card{
+  border: 1px solid black;
+  backface-visibility: hidden;
+  cursor: pointer;
+  color: black;
+  font-size: 40px;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  background: url("/images/cartback.png");
+  display: inline-block;
+
+}
+.back{
+  transform: rotateY(180deg);
+  &.bags{
+    background: url("/images/cartbags.png");
+  }
+  &.gamover{
+    background: url("/images/gamover.png");
+  }
+}
+.wrap{
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}

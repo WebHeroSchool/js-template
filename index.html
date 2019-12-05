@@ -1,12 +1,26 @@
 <html>
     <head>
-        <title>fetch api gihub</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
+        <title>game</title>
+        <link rel="stylesheet" href="dist/main.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="loader">
-            <img src="spinne.svg" alt="">
-        </div>
+        <main class="main">
+            <div class="header">
+                <h1>Выберите уровень сложности:</h1>
+                <p>Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.</p>
+            </div>
+            <div class="level-wrap">
+                <input id ="0" name="level" data-level="0" type="radio" value="Простой">
+                <label for="0">Простой</label>
+                <input id="1" name="level" type="radio" value="Средний">
+                <label for="1">Средний</label>
+                <input  id="2" name="level"  type="radio" value="Сложный">
+                <label for="2">Сложный</label>
+            </div>
+            <button disabled class="btn-send-js">Начать игру</button>
+
+        </main>
+        <script src="dist/main.js"></script>
     </body>
 </html>

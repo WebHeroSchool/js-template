@@ -1,0 +1,107 @@
+html {
+  font-family: 'Open Sans', sans-serif; }
+
+h1 {
+  font-size: 57px; }
+
+p {
+  font-size: 19px; }
+
+.header {
+  margin-bottom: 60px; }
+
+.level-wrap {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column; }
+  .level-wrap label {
+    font-size: 50px;
+    margin-bottom: 24px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    margin-left: 50px; }
+  .level-wrap input {
+    display: none; }
+    .level-wrap input:checked + label:after {
+      display: inline-block;
+      position: absolute;
+      left: -50px;
+      content: "";
+      margin-top: -15px;
+      top: 50%;
+      width: 30px;
+      height: 30px;
+      background-color: #D62B2E; }
+
+main {
+  background: url("/images/background.png");
+  max-width: 1100px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 150px 200px; }
+
+button {
+  font-size: 32px;
+  padding: 29px 82px;
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer; }
+  button:disabled {
+    background: gray; }
+
+.wrap-card {
+  width: 218px;
+  height: 340px;
+  -webkit-transition: -webkit-transform 1.6s;
+  transition: -webkit-transform 1.6s;
+  transition: transform 1.6s;
+  transition: transform 1.6s, -webkit-transform 1.6s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  text-align: center;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px; }
+
+.wrap-card.active {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+.card {
+  border: 1px solid black;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  cursor: pointer;
+  color: black;
+  font-size: 40px;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  position: absolute;
+  background: url("/images/cartback.png");
+  display: inline-block; }
+
+.back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+  .back.bags {
+    background: url("/images/cartbags.png"); }
+  .back.gamover {
+    background: url("/images/gamover.png"); }
+
+.wrap {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row wrap; }
+
