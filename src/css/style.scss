@@ -1,5 +1,5 @@
 html{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 h1{
   font-size: 57px;
@@ -10,9 +10,15 @@ p{
 .header{
   margin-bottom: 60px;
 }
+.cart-home{
+  position: absolute;
+  right: 70px;
+  bottom: 100px;
+}
 .level-wrap{
   display: flex;
   flex-direction: column;
+  margin-bottom: 70px;
  label{
     font-size: 50px;
     margin-bottom: 24px;
@@ -39,14 +45,16 @@ p{
   }
 }
 main{
+  position: relative;
   background: url("/images/background.png");
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
+  min-height: 100%;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   color: white;
-  padding: 150px 200px;
+  padding: 130px 100px;
 }
 button{
   font-size: 32px;
@@ -67,25 +75,30 @@ button{
   transform-style: preserve-3d;
   text-align: center;
   display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin: 12px;
+  &:hover{
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    transform: rotate(3deg);
+  }
 }
 .wrap-card.active{
   transform: rotateY(180deg);
 }
 .card{
-  border: 1px solid black;
   backface-visibility: hidden;
   cursor: pointer;
   color: black;
   font-size: 40px;
   width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   left: 0;
   height: 100%;
   position: absolute;
   background: url("/images/cartback.png");
   display: inline-block;
-
+  transition: 1s all;
 }
 .back{
   transform: rotateY(180deg);
@@ -99,5 +112,5 @@ button{
 .wrap{
   display: flex;
   justify-content: center;
-  flex-flow: row wrap;
+  flex-flow: wrap;
 }

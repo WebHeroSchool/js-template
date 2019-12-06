@@ -39,11 +39,11 @@ export default class Game {
 		this.gameover = false;
 		cards.forEach((item) => {
 			item.addEventListener("click", () => {
+				console.log(this.gameover);
 				if (!this.gameover) {
-					item.classList.toggle('active');
+					item.classList.add('active');
 					this.gameover = true;
 				} else {
-					this.renderComponent();
 					document.location.reload();
 				}
 			});

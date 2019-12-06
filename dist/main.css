@@ -1,5 +1,5 @@
 html {
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Roboto', sans-serif; }
 
 h1 {
   font-size: 57px; }
@@ -10,12 +10,18 @@ p {
 .header {
   margin-bottom: 60px; }
 
+.cart-home {
+  position: absolute;
+  right: 70px;
+  bottom: 100px; }
+
 .level-wrap {
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-bottom: 70px; }
   .level-wrap label {
     font-size: 50px;
     margin-bottom: 24px;
@@ -37,13 +43,15 @@ p {
       background-color: #D62B2E; }
 
 main {
+  position: relative;
   background: url("/images/background.png");
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
+  min-height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  padding: 150px 200px; }
+  padding: 130px 100px; }
 
 button {
   font-size: 32px;
@@ -67,26 +75,31 @@ button {
   transform-style: preserve-3d;
   text-align: center;
   display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px; }
+  margin: 12px; }
+  .wrap-card:hover {
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(3deg);
+    transform: rotate(3deg); }
 
 .wrap-card.active {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg); }
 
 .card {
-  border: 1px solid black;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   cursor: pointer;
   color: black;
   font-size: 40px;
   width: 100%;
+  border-radius: 5px;
   left: 0;
   height: 100%;
   position: absolute;
   background: url("/images/cartback.png");
-  display: inline-block; }
+  display: inline-block;
+  -webkit-transition: 1s all;
+  transition: 1s all; }
 
 .back {
   -webkit-transform: rotateY(180deg);
@@ -101,7 +114,5 @@ button {
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  flex-flow: row wrap; }
+  flex-flow: wrap; }
 
