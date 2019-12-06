@@ -38,12 +38,11 @@ export default class Game {
 		const cards = document.querySelectorAll(".wrap-card");
 		this.gameover = false;
 		cards.forEach((item) => {
-			item.addEventListener("click", () => {
-				console.log(this.gameover);
+			item.addEventListener("click", (e) => {
 				if (!this.gameover) {
 					item.classList.add('active');
 					this.gameover = true;
-				} else {
+				} else if(item.classList.contains("active")){
 					document.location.reload();
 				}
 			});

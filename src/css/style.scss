@@ -80,9 +80,15 @@ button{
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
     transform: rotate(3deg);
   }
+  &.game-start{
+    transform: rotate(0deg);
+  }
 }
 .wrap-card.active{
   transform: rotateY(180deg);
+  &:hover{
+    box-shadow: none;
+  }
 }
 .card{
   backface-visibility: hidden;
